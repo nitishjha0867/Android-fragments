@@ -1,4 +1,4 @@
-package com.codepath.mypizza;
+package com.codepath.fragments;
 
 import android.support.test.rule.ActivityTestRule;
 

@@ -1,4 +1,4 @@
-package com.codepath.mypizza;
+package com.codepath.fragments;
 
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package com.codepath.mypizza;
+package com.codepath.fragments;
 
 import android.content.res.Configuration;
 import android.os.Bundle;
@@ -7,10 +7,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.Toast;
 
-import com.codepath.mypizza.fragments.PizzaDetailFragment;
-import com.codepath.mypizza.fragments.PizzaMenuFragment;
+import com.codepath.fragments.fragments.DetailFragment;
+import com.codepath.fragments.fragments.MenuFragment;
 
-public class MainActivity extends AppCompatActivity  implements PizzaMenuFragment.OnItemSelectedListener {
+public class MainActivity extends AppCompatActivity  implements MenuFragment.OnItemSelectedListener {
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity  implements PizzaMenuFragmen
 
     if (savedInstanceState == null) {
       // Instance of first fragment
-      PizzaMenuFragment firstFragment = new PizzaMenuFragment();
+      MenuFragment firstFragment = new MenuFragment();
 
       // Add Fragment to FrameLayout (flContainer), using FragmentManager
       FragmentTransaction ft = getSupportFragmentManager().beginTransaction();// begin  FragmentTransaction
@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity  implements PizzaMenuFragmen
     }
 
     if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
-      PizzaDetailFragment secondFragment = new PizzaDetailFragment();
+      DetailFragment secondFragment = new DetailFragment();
       Bundle args = new Bundle();
       args.putInt("position", 0);
       secondFragment.setArguments(args);          // (1) Communicate with Fragment using Bundle
@@ -45,8 +45,8 @@ public class MainActivity extends AppCompatActivity  implements PizzaMenuFragmen
   public void onPizzaItemSelected(int position) {
     Toast.makeText(this, "Called By Fragment A: position - "+ position, Toast.LENGTH_SHORT).show();
 
-    // Load Pizza Detail Fragment
-    PizzaDetailFragment secondFragment = new PizzaDetailFragment();
+    // Load Data Detail Fragment
+    DetailFragment secondFragment = new DetailFragment();
 
     Bundle args = new Bundle();
     args.putInt("position", position);

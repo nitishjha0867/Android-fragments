@@ -1,4 +1,4 @@
-package com.codepath.mypizza.fragments;
+package com.codepath.fragments.fragments;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -11,13 +11,13 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import com.codepath.mypizza.R;
-import com.codepath.mypizza.data.Pizza;
+import com.codepath.fragments.R;
+import com.codepath.fragments.data.Data;
 
 /**
  * Created by Shyam Rokde on 8/5/16.
  */
-public class PizzaMenuFragment extends Fragment {
+public class MenuFragment extends Fragment {
 
 
   ArrayAdapter<String> itemsAdapter;
@@ -26,7 +26,7 @@ public class PizzaMenuFragment extends Fragment {
   public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
 
-    itemsAdapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_1, Pizza.pizzaMenu);
+    itemsAdapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_1, Data.stringMenu);
   }
 
   @Override
@@ -65,10 +65,9 @@ public class PizzaMenuFragment extends Fragment {
       this.listener = (OnItemSelectedListener) context; // = (YourActivity) context
     } else {
       throw new ClassCastException(context.toString()
-        + " must implement PizzaMenuFragment.OnItemSelectedListener");
+        + " must implement MenuFragment.OnItemSelectedListener");
     }
   }
-
 
   // Define the events that the fragment will use to communicate
   public interface OnItemSelectedListener {

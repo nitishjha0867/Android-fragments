@@ -1,4 +1,4 @@
-package com.codepath.mypizza.fragments;
+package com.codepath.fragments.fragments;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -8,13 +8,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.codepath.mypizza.R;
-import com.codepath.mypizza.data.Pizza;
+import com.codepath.fragments.R;
+import com.codepath.fragments.data.Data;
 
 /**
  * Created by Shyam Rokde on 8/5/16.
  */
-public class PizzaDetailFragment extends Fragment {
+public class DetailFragment extends Fragment {
   int position = 0;
   TextView tvTitle;
   TextView tvDetails;
@@ -45,13 +45,13 @@ public class PizzaDetailFragment extends Fragment {
     tvDetails = (TextView) view.findViewById(R.id.tvDetails);
 
     // update view
-    tvTitle.setText(Pizza.pizzaMenu[position]);
-    tvDetails.setText(Pizza.pizzaDetails[position]);
+    tvTitle.setText(Data.stringMenu[position]);
+    tvDetails.setText(Data.stringDetails[position]);
   }
 
   // Activity is calling this to update view on Fragment
   public void updateView(int position){
-    tvTitle.setText(Pizza.pizzaMenu[position]);
-    tvDetails.setText(Pizza.pizzaDetails[position]);
+    tvTitle.setText(Data.stringMenu[position]);
+    tvDetails.setText(Data.stringDetails[position]);
   }
 }
